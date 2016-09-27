@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Contribe2.BookstoreSrv;
+using BookstoreServer;
 
-namespace ContribeTest {
+namespace BookstoreTest {
   [TestClass]
   public class BookTest {
 
@@ -27,7 +27,7 @@ namespace ContribeTest {
     }
 
     [TestMethod]
-    public void RetrieveBooksCheckResults() {
+    public void RetrieveBooks() {
       // arrange
       Book book = CreateTestBook();
 
@@ -38,8 +38,8 @@ namespace ContribeTest {
       int nLeftInStockExpected = 2;
 
       // assert
-      Assert.AreEqual(nRetrievedExpected, nRetrieved, "Number of retrieved books wrong when nWanted < nStock");
-      Assert.AreEqual(nLeftInStockExpected, nLeftInStock, "Number of left books wrong when nWanted < nStock");
+      Assert.AreEqual(nRetrievedExpected, nRetrieved, "RetrieveBooks 1 failed: Number of retrieved books wrong when nWanted < nStock");
+      Assert.AreEqual(nLeftInStockExpected, nLeftInStock, "RetrieveBooks 2 failed: Number of left books wrong when nWanted < nStock");
 
       // act
       nRetrieved = book.RetrieveItems(5);
@@ -48,8 +48,8 @@ namespace ContribeTest {
       nLeftInStockExpected = 0;
 
       // assert
-      Assert.AreEqual(nRetrievedExpected, nRetrieved, "Number of retrieved books wrong when nWanted > nStock");
-      Assert.AreEqual(nLeftInStockExpected, nLeftInStock, "Number of left books wrong when nWanted > nStock");
+      Assert.AreEqual(nRetrievedExpected, nRetrieved, "RetrieveBooks 3 failed: Number of retrieved books wrong when nWanted > nStock");
+      Assert.AreEqual(nLeftInStockExpected, nLeftInStock, "RetrieveBooks 4 failed: Number of left books wrong when nWanted > nStock");
     }
   }
 }

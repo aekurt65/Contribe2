@@ -52,17 +52,24 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CartsTest.cs" />
-    <Compile Include="dbBookStoreTest.cs" />
+    <Compile Include="BooksTest.cs" />
     <Compile Include="PlacedOrderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CartTest.cs" />
     <Compile Include="BookTest.cs" />
+    <Compile Include="UserTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Contribe2\Contribe.csproj">
-      <Project>{0f4aece1-e212-4eef-83eb-15d039997d56}</Project>
-      <Name>Contribe</Name>
+    <ProjectReference Include="..\ContribeCommon\ContribeCommon.csproj">
+      <Project>{3c3022f4-c33f-40ce-ab7f-7689b2622d0d}</Project>
+      <Name>ContribeCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ContribeInterface\ContribeInterface.csproj">
+      <Project>{79f30462-d898-433a-a73b-d69098ee0e5f}</Project>
+      <Name>ContribeInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ContribeServer\ContribeServer.csproj">
+      <Project>{0adbd0a4-a047-4a5d-9018-c67249d00141}</Project>
+      <Name>ContribeServer</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
